@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/**
+* * flex_basic_layout
+* * direction이 row 인(=>) flex의 구조이며, 매개변수가 없을시 justify, align-items를 통해 가운데 정렬을 한다.
+*/
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body #root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body #root div:first-child {
+  width: 80%;
+  height: 80%;
+}
+body #root div:first-child .content-header {
+  width: 100%;
+  height: 20%;
+  display: grid;
+  justify-content: center;
+  place-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: blue;
+}
+body #root div:first-child .content-header div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+}
+body #root div:first-child .content-header div button {
+  width: 50%;
+  height: 50%;
+  border: none;
+  background-color: white;
+}
+body #root div:first-child .content-header div button:hover {
+  background-color: rgb(173, 173, 173);
+}
+body #root div:first-child .content-main {
+  background-color: black;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

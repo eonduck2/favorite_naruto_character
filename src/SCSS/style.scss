@@ -1,0 +1,41 @@
+@use "./mixIns.scss";
+
+body {
+  @include mixIns.create_contents_container(100%, 100%);
+  overflow: hidden;
+
+  #root {
+    @include mixIns.create_contents_container(100vw, 100vh);
+    @include mixIns.flex_basic_layout();
+
+    div:first-child {
+      @include mixIns.create_contents_container(80%, 80%);
+
+      .content-header {
+        @include mixIns.create_contents_container(100%, 20%);
+        @include mixIns.grid_column_layout(repeat(5, 1fr));
+        background-color: blue;
+
+        div {
+          @include mixIns.create_contents_container(100%, 100%);
+          @include mixIns.flex_basic_layout();
+          background-color: aliceblue;
+
+          button {
+            @include mixIns.create_contents_container(50%, 50%);
+            border: none;
+            background-color: white;
+          }
+          button:hover {
+            background-color: rgb(173, 173, 173);
+          }
+        }
+      }
+      .content-main {
+        background-color: black;
+        @include mixIns.create_contents_container(100%, 80%);
+        @include mixIns.flex_basic_layout();
+      }
+    }
+  }
+}

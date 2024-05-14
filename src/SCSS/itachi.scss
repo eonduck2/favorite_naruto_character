@@ -1,0 +1,51 @@
+@use "./mixIns.scss";
+
+$ninja-name-font-size: 1.25rem;
+$ninja-name-font-weight: 600;
+$border-radius-all: 0.4375rem;
+
+body {
+  @include mixIns.create_contents_container(100%, 100%);
+  overflow: hidden;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  #root {
+    @include mixIns.create_contents_container(100vw, 100vh);
+    @include mixIns.flex_basic_layout();
+    background-color: black;
+
+    .content-box {
+      @include mixIns.create_contents_container(30%, 85%);
+      @include mixIns.flex_basic_layout(column, space-around);
+      background-color: white;
+      border-radius: $border-radius-all;
+
+      .pic-box {
+        @include mixIns.create_contents_container(90%, 40%);
+
+        > img:first-child {
+          @include mixIns.create_contents_container(100%, 100%);
+        }
+      }
+
+      .ninja-name {
+        > p {
+          font-size: $ninja-name-font-size;
+          font-weight: $ninja-name-font-weight;
+        }
+      }
+
+      .info {
+        @include mixIns.create_contents_container(100%, 30%);
+        @include mixIns.grid_column_layout();
+
+        img {
+          border-radius: $border-radius-all;
+        }
+      }
+    }
+  }
+}
